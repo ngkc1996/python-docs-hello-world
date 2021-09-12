@@ -1,6 +1,10 @@
 from flask import Flask
 
-app = Flask(__name__)
+from files import create_app
+
+app = create_app()
+# app = Flask(__name__)
+
 # app.config['MONGO_URI'] = os.environ.get('DB_URI')
 
 
