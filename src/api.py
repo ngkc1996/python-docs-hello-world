@@ -19,7 +19,7 @@ class URLShortener(Resource):
         # db_data = add_url(url)
         # id = db_data.inserted_id
         # return BASE_URL + str(id)
-        return "post call seen"
+        return "post call seen", HTTPStatus.OK
 
 
 class URLRedirect(Resource):
@@ -33,4 +33,4 @@ class URLRedirect(Resource):
         # else:
         #     return "URL not found.", HTTPStatus.BAD_REQUEST
 
-        return str(id) + " get call seen"
+        return "get call seen", HTTPStatus.OK
