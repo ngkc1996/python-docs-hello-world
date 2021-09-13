@@ -9,7 +9,8 @@ from src.api import URLShortener, URLRedirect
 app = Flask(__name__)
 api = Api(app)
 
-# app.config['MONGO_URI'] = os.environ.get('DB_URI')
+
+app.config['MONGO_URI'] = os.environ.get('DB_URI')
 # app.run()
 
 

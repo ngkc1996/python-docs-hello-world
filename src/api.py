@@ -11,10 +11,10 @@ class URLShortener(Resource):
         if url is None or url == "":
             return "URL not given.", HTTPStatus.BAD_REQUEST
 
-        # db_data = add_url(url)
-        # id = db_data.inserted_id
-        # return BASE_URL + str(id)
-        return "Your URL was " + str(url)
+        db_data = add_url(url)
+        id = db_data.inserted_id
+        return BASE_URL + str(id)
+        # return "Your URL was " + str(url)
 
 
 class URLRedirect(Resource):
