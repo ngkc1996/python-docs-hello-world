@@ -8,6 +8,6 @@ app = create_app()
 # app.config['MONGO_URI'] = os.environ.get('DB_URI')
 app.run()
 
-# @app.route("/")
-# def hello():
-#     return "Hello, World!"
+@app.route("/")
+def hello():
+    return "Hello, World!"

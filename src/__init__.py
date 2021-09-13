@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_restful import Api
 # from flask_cors import CORS
-from src.api import URLShortener, URLRedirect
+# from src.api import URLShortener, URLRedirect
 
 
 def create_app():
@@ -12,7 +12,7 @@ def create_app():
 	# CORS(app)
 
 
-	api.add_resource(URLShortener, '/')
-    api.add_resource(URLRedirect, '/<id>')
+	# api.add_resource(URLShortener, '/')
+    # api.add_resource(URLRedirect, '/<id>')
 
 	return app
