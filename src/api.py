@@ -3,6 +3,9 @@ from http import HTTPStatus
 from flask import request, redirect
 from flask_restful import Resource
 
+from src.db import add_url, get_url
+
+BASE_URL = "https://url-shorten-3.scm.azurewebsites.net/"
 
 class URLShortener(Resource):
     def post(self):
