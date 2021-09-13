@@ -26,15 +26,15 @@ class URLShortener(Resource):
 #         return "post call seen", HTTPStatus.OK
 
 
-# class URLRedirect(Resource):
-#     def get(self, id):
-#         # data = get_url(id)
-#         # if data:
-#         #     url = data['url']
-#         #     if not url.startswith(('http://', 'https://')):
-#         #         url = 'http://' + url
-#         #     return redirect(url, code=HTTPStatus.PERMANENT_REDIRECT)
-#         # else:
-#         #     return "URL not found.", HTTPStatus.BAD_REQUEST
+class URLRedirect(Resource):
+    def get(self, id):
+        # data = get_url(id)
+        # if data:
+        #     url = data['url']
+        #     if not url.startswith(('http://', 'https://')):
+        #         url = 'http://' + url
+        #     return redirect(url, code=HTTPStatus.PERMANENT_REDIRECT)
+        # else:
+        #     return "URL not found.", HTTPStatus.BAD_REQUEST
 
-#         return "get call seen", HTTPStatus.OK
+        return "get call seen" + str(id), HTTPStatus.OK
