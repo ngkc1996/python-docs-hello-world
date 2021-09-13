@@ -3,7 +3,7 @@ from flask_restful import Api
 from flask_cors import CORS
 from src.api import URLShortener
 
-from src import create_app
+# from src import create_app
 
 # app = create_app()
 # app = Flask(__name__)
