@@ -1,7 +1,7 @@
-import os
-from http import HTTPStatus
-from flask import request, redirect
-from flask_restful import Resource
+# import os
+# from http import HTTPStatus
+# from flask import request, redirect
+# from flask_restful import Resource
 
 # from src.db import add_url, get_url
 
@@ -9,9 +9,9 @@ from flask_restful import Resource
 # BASE_URL = os.environ.get('BASE_URL')
 
 
-class URLShortener(Resource):
-    def get(self):
-        return "You called get on /", HTTPStatus.OK
+# class URLShortener(Resource):
+#     def get(self):
+#         return "You called get on /", HTTPStatus.OK
 
 
     # def post(self):
