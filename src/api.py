@@ -5,7 +5,8 @@ from flask_restful import Resource
 
 from src.db import add_url, get_url
 
-BASE_URL = "https://url-shorten-3.scm.azurewebsites.net/"
+BASE_URL = os.environ.get('BASE_URL')
+
 
 class URLShortener(Resource):
     def post(self):
@@ -17,21 +18,15 @@ class URLShortener(Resource):
         db_data = add_url(url)
         id = db_data.inserted_id
         return BASE_URL + str(id)
-        # return "Your URL was " + str(url)
 
 
 class URLRedirect(Resource):
     def get(self, id):
-        # data = get_url(id)
-        # if data:
-        #     url = data['url']
-        #     if not url.startswith(('http://', 'https://')):
-        #         url = 'http://' + url
-        #     return redirect(url, code=HTTPStatus.PERMANENT_REDIRECT)
-        # else:
-        #     return "URL not found.", HTTPStatus.BAD_REQUEST
-
-        # return "Your Id was " + str(id)
-
-        env_var = os.environ.get('DB_URI')
-        return str(env_var)
+        data = get_url(id)
+        if data:
+            url = data['url']
+            if not url.startswith(('http://', 'https://')):
+                url = 'http://' + url
+            return redirect(url, code=HTTPStatus.PERMANENT_REDIRECT)
+        else:
+            return "URL not found.", HTTPStatus.BAD_REQUEST
