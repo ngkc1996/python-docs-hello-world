@@ -2,7 +2,7 @@ from flask import Flask
 
 # from src import create_app
 from flask_restful import Api
-from src.api import HelloWorld
+from src.api import URLShortener, URLRedirect
 
 # app = create_app()
 app = Flask(__name__)
@@ -13,7 +13,9 @@ api = Api(app)
 
 
 
-api.add_resource(HelloWorld, '/')
+# api.add_resource(HelloWorld, '/')
+api.add_resource(URLShortener, '/')
+api.add_resource(URLRedirect, '/<id>')
 
 if __name__ == '__main__':
     app.run()
