@@ -12,7 +12,7 @@ def create_app():
 	# CORS(app)
 
 
-	# api.add_resource(URLShortener, '/')
+	api.add_resource(URLShortener, '/')
     # api.add_resource(URLRedirect, '/<id>')
 
 	return app
