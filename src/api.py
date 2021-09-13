@@ -1,3 +1,4 @@
+import os
 from http import HTTPStatus
 from flask import request, redirect
 from flask_restful import Resource
@@ -27,4 +28,7 @@ class URLRedirect(Resource):
         # else:
         #     return "URL not found.", HTTPStatus.BAD_REQUEST
 
-        return "Your Id was " + str(id)
+        # return "Your Id was " + str(id)
+
+        env_var = os.environ.get('DB_URI')
+        return str(env_var)
